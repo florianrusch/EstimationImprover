@@ -13,3 +13,11 @@ html {
 	);
 	height: 100%;
 }
+
+a {
+	cursor: pointer;
+}
+
+a:hover {
+	color: rgb(237, 81, 158)
+}

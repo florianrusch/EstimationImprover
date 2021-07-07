@@ -9,92 +9,45 @@
 					<th class="text-left py-3 px-4 uppercase font-semibold text-sm">Expected</th>
 					<th class="text-left py-3 px-4 uppercase font-semibold text-sm">Worst-case</th>
 					<th class="text-left py-3 px-4 uppercase font-semibold text-sm">Indeed</th>
+					<th></th>
 				</tr>
 			</thead>
 			<tbody class="text-gray-700">
-				<Task v-for="task in tasks" :key="task.id" :task="task"></Task>
+				<Task
+					v-for="(task, index) in tasks"
+					:key="task.id"
+					:task="task"
+					@taskUpdate="(changedTask) => updateTask(changedTask, index)"
+					@taskDelete="(task) => deleteTask(index, task)"
+				></Task>
 			</tbody>
 		</table>
+		<button @click="newTask()"><Plus /> New Task</button>
 	</div>
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive } from 'vue'
+import { defineComponent } from 'vue'
 import Task from '@/components/Task.vue'
-import { Task as TaskModel, Complexity, UncertaintyLevel } from '@/models/Task'
+import Plus from '@/components/Icons/Plus.vue'
+import { useTasks } from '@/composable/useTasks'
 
 export default defineComponent({
 	components: {
 		Task: Task,
+		Plus: Plus,
 	},
+
 	setup() {
-		var tasks = reactive([
-			new TaskModel(
-				'123',
-				'This is a simple task',
-				Complexity.MEDIUM,
-				UncertaintyLevel.MODERATE,
-				0
-			),
-			new TaskModel(
-				'123',
-				'This is a simple task',
-				Complexity.MEDIUM,
-				UncertaintyLevel.MODERATE,
-				0
-			),
-			new TaskModel(
-				'123',
-				'This is a simple task',
-				Complexity.MEDIUM,
-				UncertaintyLevel.MODERATE,
-				0
-			),
-			new TaskModel(
-				'123',
-				'This is a simple task',
-				Complexity.MEDIUM,
-				UncertaintyLevel.MODERATE,
-				0
-			),
-			new TaskModel(
-				'123',
-				'This is a simple task',
-				Complexity.MEDIUM,
-				UncertaintyLevel.MODERATE,
-				0
-			),
-			new TaskModel(
-				'123',
-				'This is a simple task',
-				Complexity.MEDIUM,
-				UncertaintyLevel.MODERATE,
-				0
-			),
-			new TaskModel(
-				'123',
-				'This is a simple task',
-				Complexity.MEDIUM,
-				UncertaintyLevel.MODERATE,
-				0
-			),
-			new TaskModel(
-				'123',
-				'This is a simple task',
-				Complexity.MEDIUM,
-				UncertaintyLevel.MODERATE,
-				0
-			),
-			new TaskModel(
-				'123',
-				'This is a simple task',
-				Complexity.MEDIUM,
-				UncertaintyLevel.MODERATE,
-				0
-			),
-		])
+		const { tasks, fetchTasks, newTask, updateTask, deleteTask } = useTasks()
+
+		fetchTasks()
+
 		return {
 			tasks,
+			newTask,
+			updateTask,
+			deleteTask,
 		}
 	},
 })

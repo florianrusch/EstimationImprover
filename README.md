@@ -27,3 +27,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 - <https://tailwindtoolbox.github.io/Rainblur-Landing-Page/>
 - <https://tailwindtoolbox.github.io/Profile-Card/>
+- <https://www.reddit.com/r/programming/comments/o4fs5o/software_estimation_is_hard_do_it_anyway/>

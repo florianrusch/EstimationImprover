@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`# TextInput renders correctly w/ init value 1`] = `
+<div
+  class="flex items-center border-b border-teal-500 py-2"
+>
+  <input
+    class="bg-transparent border-none mr-3 px-2 leading-tight focus:outline-none"
+    type="text"
+  />
+</div>
+`;
+
+exports[`# TextInput renders correctly w/o init value 1`] = `
+<div
+  class="flex items-center border-b border-teal-500 py-2"
+>
+  <input
+    class="bg-transparent border-none mr-3 px-2 leading-tight focus:outline-none"
+    type="text"
+  />
+</div>
+`;

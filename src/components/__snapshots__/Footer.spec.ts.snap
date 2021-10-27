@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`# Footer renders correctly 1`] = `
+<div
+  class="w-full pt-16 pb-6 text-sm text-center md:text-left fade-in text-gray-500"
+>
+   © 2021 - Developed with ❤️ by Florian Rusch 
+</div>
+`;

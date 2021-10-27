@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`# Plus renders correctly 1`] = `
+<svg
+  height="100%"
+  style="fill-rule: evenodd; clip-rule: evenodd; stroke-linecap: round; stroke-linejoin: round; stroke-miterlimit: 1.5;"
+  version="1.1"
+  viewBox="0 0 100 100"
+  width="100%"
+  xml:space="preserve"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:serif="http://www.serif.com/"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+>
+  <title>
+    Plus-Icon
+  </title>
+  <desc>
+    This is an icon which shows a plus symbol.
+  </desc>
+  <g>
+    <path
+      d="M 50,0 l 0,100"
+      style="fill: none; stroke: currentColor; stroke-width: 10px;"
+    />
+    <path
+      d="M 0,50 l 100,0"
+      style="fill: none; stroke: currentColor; stroke-width: 10px;"
+    />
+  </g>
+</svg>
+`;

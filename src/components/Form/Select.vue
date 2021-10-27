@@ -15,6 +15,7 @@
 			"
 			@change="onChange"
 		>
+			<option v-if="current == -1" disabled selected></option>
 			<option
 				v-for="ele in options"
 				:key="ele.name"
@@ -39,7 +40,8 @@ export default defineComponent({
 	props: {
 		current: {
 			type: Number,
-			required: true,
+			required: false,
+			default: -1,
 		},
 		options: {
 			type: Array as PropType<Option[]>,

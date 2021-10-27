@@ -22,7 +22,7 @@
 				></Task>
 			</tbody>
 		</table>
-		<button @click="newTask()"><Plus /> New Task</button>
+		<button @click="newTask()"><Plus class="h-3 w-3 inline mb-0.5 mr-1" /> New Task</button>
 	</div>
 </template>
 

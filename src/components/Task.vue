@@ -23,7 +23,7 @@
 		<td class="text-left py-3 px-4">{{ task.indeed }} days</td>
 		<td class="text-right py-3 px-4">
 			<a @click="deleteTask()" title="Delete Task">
-				<Trash />
+				<Trash class="w-4 h-4" />
 			</a>
 		</td>
 	</tr>

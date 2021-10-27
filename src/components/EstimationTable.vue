@@ -18,7 +18,7 @@
 					:key="task.id"
 					:task="task"
 					@taskUpdate="(changedTask) => updateTask(changedTask, index)"
-					@taskDelete="(task) => deleteTask(index, task)"
+					@taskDelete="(task) => deleteTask(task)"
 				></Task>
 			</tbody>
 		</table>

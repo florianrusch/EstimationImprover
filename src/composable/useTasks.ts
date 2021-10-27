@@ -19,7 +19,7 @@ export function useTasks() {
 		return task
 	}
 
-	const deleteTask = (task: Task, index: number): void => {
+	const deleteTask = (index: number): void => {
 		tasks.value.splice(index, 1)
 	}
 

@@ -20,10 +20,16 @@
 		<desc v-if="description">{{ description }}</desc>
 		<path
 			d="M14.704,31.159l66.592,0c0,0 -11.108,61.263 -11.108,61.263l-44.438,-0l-11.046,-61.263Z"
-			style="stroke: #000; stroke-width: 4px"
+			style="stroke: currentColor; stroke-width: 4px"
 		/>
-		<path d="M15.819,9.273l65.472,12.105" style="fill: none; stroke: #000; stroke-width: 10px" />
-		<path d="M42.531,8.44l15.729,2.989" style="fill: none; stroke: #000; stroke-width: 13px" />
+		<path
+			d="M15.819,9.273l65.472,12.105"
+			style="fill: none; stroke: currentColor; stroke-width: 10px"
+		/>
+		<path
+			d="M42.531,8.44l15.729,2.989"
+			style="fill: none; stroke: currentColor; stroke-width: 13px"
+		/>
 	</svg>
 </template>
 
@@ -39,12 +45,3 @@ export default defineComponent({
 	},
 })
 </script>
-
-<style scoped>
-svg {
-	fill: currentColor;
-	line-height: 1;
-	height: 1em;
-	width: 1em;
-}
-</style>

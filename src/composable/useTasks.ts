@@ -1,9 +1,10 @@
-import { ref } from 'vue'
 import { v4 as uuidv4 } from 'uuid'
 import { useComplexityLevels } from './useComplexityLevels'
 import { useUncertaintyLevels } from './useUncertaintyLevels'
+import { useStorage } from '@vueuse/core'
+import { ref } from 'vue'
 
-const tasks = ref<Task[]>([])
+const storage = useStorage('tasks', { task: [] as Task[] })
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function useTasks() {
@@ -15,49 +16,21 @@ export function useTasks() {
 			useUncertaintyLevels().getDefault().value,
 			0
 		)
-		tasks.value.push(task)
+
+		storage.value.task.push(task)
 		return task
 	}
 
 	const deleteTask = (index: number): void => {
-		tasks.value.splice(index, 1)
+		storage.value.task.splice(index, 1)
 	}
 
 	const updateTask = (task: Task, index: number): void => {
-		tasks.value[index] = task
-	}
-
-	const fetchTasks = () => {
-		tasks.value = []
-		const newTasks = [
-			new Task(
-				uuidv4(),
-				'Test',
-				useComplexityLevels().getDefault().value,
-				useUncertaintyLevels().getDefault().value,
-				0
-			),
-			new Task(
-				uuidv4(),
-				'',
-				useComplexityLevels().getDefault().value,
-				useUncertaintyLevels().getDefault().value,
-				0
-			),
-			new Task(
-				uuidv4(),
-				'',
-				useComplexityLevels().getDefault().value,
-				useUncertaintyLevels().getDefault().value,
-				0
-			),
-		]
-		tasks.value = newTasks
+		storage.value.task[index] = task
 	}
 
 	return {
-		tasks,
-		fetchTasks,
+		tasks: storage,
 		newTask,
 		deleteTask,
 		updateTask,

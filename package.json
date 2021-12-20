@@ -9,6 +9,7 @@
 		"test": "jest"
 	},
 	"dependencies": {
+		"@vueuse/core": "^6.7.4",
 		"core-js": "^3.6.5",
 		"uuid": "^3.4.0",
 		"vue": "^3.0.0",

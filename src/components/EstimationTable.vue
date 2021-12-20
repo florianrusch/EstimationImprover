@@ -39,9 +39,7 @@ export default defineComponent({
 	},
 
 	setup() {
-		const { tasks, fetchTasks, newTask, updateTask, deleteTask } = useTasks()
-
-		fetchTasks()
+		const { tasks, newTask, updateTask, deleteTask } = useTasks()
 
 		return {
 			tasks,
